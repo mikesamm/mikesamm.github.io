@@ -1,9 +1,11 @@
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
 	/* border: 1px solid red; */
 }
 
@@ -46,13 +48,43 @@ li {
 	list-style-type: none;
 }
 
-svg {
-	fill: #261704;
-	height: 2rem;
+footer {
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.contact-icon {
+	height: 3rem;
+}
+
+.qr-code {
+	display: none;
 }
 
 @media screen and (max-width: 400px) {
-	ul {
-		gap: 1.5rem;
+	.contact-icon {
+		display: none;
+	}
+
+	.qr-code {
+		display: flex;
+		max-width: 100%;
+		height: auto;
+	}
+
+	#socials {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#job-title {
+		margin-bottom: 2rem;
+	}
+
+	#github-qr,
+	#linkedin-qr {
+		margin-bottom: 6rem;
 	}
 }
