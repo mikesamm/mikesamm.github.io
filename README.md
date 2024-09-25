@@ -1,3 +1,3 @@
 ## mikesammartino.com
 
-- My simple landing page and portfolio
+My personal landing page
