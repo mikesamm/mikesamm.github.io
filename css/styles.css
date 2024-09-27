@@ -73,6 +73,9 @@ footer {
 		max-width: 100%;
 		height: auto;
 	}
+	.qr-code:not(#email-qr) {
+		margin-bottom: 6rem;
+	}
 
 	#socials {
 		display: flex;
@@ -83,8 +86,4 @@ footer {
 		margin-bottom: 2rem;
 	}
 
-	#github-qr,
-	#linkedin-qr {
-		margin-bottom: 6rem;
-	}
 }
