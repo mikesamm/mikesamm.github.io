@@ -10,57 +10,74 @@
 	<div class="wrapper">
 		<h1 id="name">mike sammartino</h1>
 		<h4 id="job-title">full stack software engineer</h4>
-		<button id="qr-show-button" class="qr-button">show qr codes</button>
-		<button id="qr-hide-button" class="qr-button qr-button-hide">hide qr codes</button>
+
 		<section id="socials">
-			<div class="contact">
+			<div id="github-contact" class="contact-list">
 				<a href="https://github.com/mikesamm">
 					<img class="contact-icon" src="./assets/img/github-mark.png" />
-					<img id="github-qr" class="qr-code-hide" src="./assets/qr-codes/githubQR-styled.png" />
+					<img id="github-qr" class="qr-code qr-code-hide" src="./assets/qr-codes/githubQR-styled.png" />
 				</a>
 			</div>
-			<div id="repos">
-					<a href="https://github.com/mikesamm/homelib">homelib</a>
-					<a href="https://github.com/mikesamm/mkdev">mkdev</a>
-					<a href="https://github.com/mikesamm/Dogagatchi">dogagatchi</a>
+			<div class="repos contact-list">
+				<p>repos:</p>
+				<a href="https://github.com/mikesamm/homelib">homelib</a>
+				<a href="https://github.com/mikesamm/mkdev">mkdev</a>
+				<a href="https://github.com/mikesamm/Dogagatchi">dogagatchi</a>
 			</div>
-			<div class="contact">
+			<div class="contact-list">
 				<a href="https://www.linkedin.com/in/mike-sammartino/">
 					<img class="contact-icon" src="./assets/img/In-Blue-96.png" />
-					<img id="linkedin-qr" class="qr-code-hide" src="./assets/qr-codes/linkedinQR-styled.png" />
+					<img id="linkedin-qr" class="qr-code qr-code-hide" src="./assets/qr-codes/linkedinQR-styled.png" />
 				</a>
 			</div>
-			<div class="contact">
+			<div class="contact-list">
 				<a href="https://drive.google.com/file/d/1-bFKh-qdhA6sBIPTr8IB--YZ0XKXhAtQ/view?usp=sharing">
 					<img class="contact-icon" src="./assets/img/resume-icon.png" />
-					<img id="resume-qr" class="qr-code-hide" src="./assets/qr-codes/resumeQR-styled.png" />
+					<img id="resume-qr" class="qr-code qr-code-hide" src="./assets/qr-codes/resumeQR-styled.png" />
 				</a>
 			</div>
-			<div class="contact">
+			<div class="contact-list">
 				<a href="mailto:mike@mikesammartino.com">
 					<img class="contact-icon" src="./assets/img/email-logo.png" />
-					<img id="email-qr" class="qr-code-hide" src="./assets/qr-codes/emailQR-styled.png" />
+					<img id="email-qr" class="qr-code qr-code-hide" src="./assets/qr-codes/emailQR-styled.png" />
 				</a>
 			</div>
 		</section>
+		<button id="qr-show-button" class="qr-button">show qr codes</button>
+		<button id="qr-hide-button" class="qr-button qr-button-hide">hide qr codes</button>
 	</div>
 	<footer>&copy; 2024</footer>
 
 	<script>
 		const showButton = document.querySelector('#qr-show-button');
 		const hideButton = document.querySelector('#qr-hide-button');
+		const qrCodes = document.querySelectorAll('.qr-code');
+		const contactIcons = document.querySelectorAll('.contact-icon')
+		const repos = document.querySelector('.repos');
 
 		// toggle QR button mode
 		showButton.addEventListener('click', function(){
-			console.log('clicked');
 			this.classList.toggle("qr-button-hide");
 			hideButton.classList.toggle("qr-button-hide");
+			repos.classList.toggle('repos-hide');
+			qrCodes.forEach((qrCode) => {
+				qrCode.classList.toggle('qr-code-show');
+			})
+			contactIcons.forEach((icon) => {
+				icon.classList.toggle('contact-icon-hide')
+			})
 		})
 
 		hideButton.addEventListener('click', function() {
-			console.log('unclicked');
 			this.classList.toggle("qr-button-hide");
 			showButton.classList.toggle("qr-button-hide");
+			repos.classList.toggle('repos-hide');
+			qrCodes.forEach((qrCode) => {
+				qrCode.classList.remove('qr-code-show');
+			})
+			contactIcons.forEach((icon) => {
+				icon.classList.remove('contact-icon-hide')
+			})
 		})
 
 	</script>
