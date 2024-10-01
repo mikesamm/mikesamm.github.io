@@ -17,6 +17,11 @@ body {
 	background-color: #FFF5EE;
 }
 
+p {
+	text-align: center;
+	margin: 0;
+}
+
 .wrapper {
 	width: 80%;
 	margin: 2rem auto;
@@ -30,18 +35,28 @@ body {
 	background-color: #FFF5EE;
 }
 
-h1 {
-	margin-bottom: 1rem;
+h4 {
+	margin-top: 0;
 }
 
-p {
-	margin: 0;
-}
-
-ul {
+#socials {
 	display: flex;
+	flex-flow: row;
 	gap: 1rem;
 	padding-left: 0;
+}
+
+#github-contact {
+	gap: 0;
+}
+
+a {
+	display: flex;
+	justify-content: center;
+}
+
+.repos {
+	display: none;
 }
 
 li {
@@ -59,16 +74,36 @@ footer {
 	height: 3rem;
 }
 
-.qr-code {
+.qr-code-hide {
+	display: none;
+}
+
+.qr-button {
 	display: none;
 }
 
 @media screen and (max-width: 400px) {
 	.contact-icon {
+		display: flex;
+		justify-content: center;
+		height: 3rem;
+	}
+
+	.contact-icon-hide {
 		display: none;
 	}
 
-	.qr-code {
+	.contact-list:not(#github-contact) {
+		margin-bottom: 1rem;
+	}
+
+	.qr-button {
+		display: flex;
+		margin: 1rem;
+		padding: 1rem;
+	}
+
+	.qr-code-show {
 		display: flex;
 		max-width: 100%;
 		height: auto;
@@ -77,9 +112,23 @@ footer {
 		margin-bottom: 6rem;
 	}
 
+	.qr-button-hide {
+		display: none;
+	}
+
 	#socials {
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
+	}
+
+	.repos {
+		display: flex;
+		flex-flow: column;
+	}
+
+	.repos-hide {
+		display: none;
 	}
 
 	#job-title {
