@@ -1,3 +1,71 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
+[module]
+  # uncomment line below for temporary local development of module
+  # replacements = "github.com/lxndrblz/anatole -> ../../anatole"
+  [[module.imports]]
+    path = "github.com/lxndrblz/anatole"
+    disable = false
+
+[params]
+title = "This is the title"
+author = "Fletcher Gooblystein"
+description = "Call me Fletcher"
+profilePicture = "img/headshot-square-small.png"
+
+[[params.socialIcons]]
+icon = "fab fa-linkedin"
+title = "Linkedin"
+url = "https://www.linkedin.com/in/mike-sammartino/"
+
+[[params.socialIcons]]
+icon = "fas fa-envelope"
+title = "e-mail"
+url = "mailto:mike@mikesammartino.com"
+
+[menu]
+
+  [[menu.main]]
+  name = "Home"
+  identifier = "home"
+  weight = 100
+  url = "/"
+
+  [[menu.main]]
+  name = "Posts"
+  weight = 200
+  identifier = "posts"
+  url = "/posts/"
+
+  [[menu.main]]
+  name = "About"
+  weight = 300
+  identifier = "about"
+  url = "/about/"
+
+[[menu.main]]
+name = "Accomplishments"
+weight = 500
+identifier = "accomplishments"
+
+[[menu.main]]
+name = "Awards"
+weight = 510
+identifier = "awards"
+url = "/awards/"
+parent = "accomplishments"
+
+[[menu.main]]
+name = "Certifications"
+weight = 520
+identifier = "certifications"
+url = "/certifications/"
+parent = "accomplishments"
+
+[[menu.main]]
+name = "Portfolio"
+weight = 530
+identifier = "portfolio"
+url = "/portfolio"
+parent = "accomplishments"
