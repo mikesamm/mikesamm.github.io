@@ -1,6 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'mikesammartino'
 [module]
   # uncomment line below for temporary local development of module
   # replacements = "github.com/lxndrblz/anatole -> ../../anatole"
@@ -9,9 +9,9 @@ title = 'My New Hugo Site'
     disable = false
 
 [params]
-title = "This is the title"
-author = "Fletcher Gooblystein"
-description = "Call me Fletcher"
+title = ""
+author = "Mike Sammartino"
+description = "⚠️ Page Under Construction ⚠️"
 profilePicture = "img/headshot-square-small.png"
 
 [[params.socialIcons]]
