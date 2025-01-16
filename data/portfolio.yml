@@ -1,18 +1,57 @@
 portfolioitems:
   # portfolio category
-  - title: Coding Projects
+  - title: Projects
+    # description: 'All my coding projects.'
     # items within a category
     portfolioitem:
-      - name: Project 1
-        image: '/images/portfolio/code.jpg'
-        link: https://gohugo.io/
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+      - name: clical
+        image: '/img/clical.png'
+        link: https://github.com/mikesamm/clical
+        linktext: 'view github repo'
+        description: 'Command line utility for tracking work hours and visually representing them in Google Calendar. Creating an event for my work hours went from an average of 20s using the calendar GUI down to 4s in the command line.'
         tags:
-          - Tag 1
-          - Tag 2
-        status: 'Finished'
-        start: '2020'
-        end: '2021'
+          - Go
+          - Golang
+        status: 'Published'
+        start: '12/2024'
+        end: '1/2025'
         authors:
-          - Author 1
-          - Author 2
+          - mikesamm
+      - name: homelib (working title)
+        image: '/img/homelib.png'
+        link: https://github.com/mikesamm/homelib
+        linktext: 'view github repo'
+        description: 'Physical media library cataloguer and knowledge network. Keep track of your physical collections of books, movies, music, etc.'
+        tags:
+          - TypeScript
+          - Vue3
+          - MongoDB
+          - Fastify
+        status: 'in progress'
+        start: '9/2024'
+        end: ''
+        authors:
+          - mikesamm
+      - name: mkdev
+        image: '/img/mkdev.png'
+        link: https://github.com/mikesamm/mkdev
+        linktext: 'view github repo'
+        description: 'Social media platform for developers to showcase source code next to rendered frontend views'
+        tags:
+          - TypeScript
+          - React
+          - PostgreSQL
+          - express
+          - prisma
+          - docker
+          - ec2
+          - nginx
+          - socket.io
+        status: 'Published'
+        start: '6/2024'
+        end: '7/2024'
+        authors:
+          - mikesamm
+          - Hackman78
+          - AlexPHebert2000
+          - cody-daigle
