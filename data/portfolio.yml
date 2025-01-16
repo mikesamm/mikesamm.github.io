@@ -10,8 +10,7 @@ portfolioitems:
         linktext: 'view github repo'
         description: 'Command line utility for tracking work hours and visually representing them in Google Calendar. Creating an event for my work hours went from an average of 20s using the calendar GUI down to 4s in the command line.'
         tags:
-          - Go
-          - Golang
+          - go
         status: 'Published'
         start: '12/2024'
         end: '1/2025'
@@ -23,10 +22,10 @@ portfolioitems:
         linktext: 'view github repo'
         description: 'Physical media library cataloguer and knowledge network. Keep track of your physical collections of books, movies, music, etc.'
         tags:
-          - TypeScript
-          - Vue3
-          - MongoDB
-          - Fastify
+          - typescript
+          - vue3
+          - mongoDB
+          - fastify
         status: 'in progress'
         start: '9/2024'
         end: ''
@@ -38,9 +37,9 @@ portfolioitems:
         linktext: 'view github repo'
         description: 'Social media platform for developers to showcase source code next to rendered frontend views'
         tags:
-          - TypeScript
-          - React
-          - PostgreSQL
+          - typescript
+          - react
+          - postgreSQL
           - express
           - prisma
           - docker

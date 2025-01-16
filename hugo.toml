@@ -16,18 +16,23 @@ profilePicture = "img/headshot-square-small.png"
 
 [[params.socialIcons]]
 icon = "fab fa-github"
-title = "github"
+title = "Github"
 url = "https://github.com/mikesamm"
 
 [[params.socialIcons]]
 icon = "fab fa-linkedin"
-title = "Linkedin"
+title = "LinkedIn"
 url = "https://www.linkedin.com/in/mike-sammartino/"
 
 [[params.socialIcons]]
 icon = "fas fa-envelope"
-title = "e-mail"
+title = "Email"
 url = "mailto:mike@mikesammartino.com"
+
+[[params.socialIcons]]
+icon = "far fa-file-pdf"
+title = "Resume PDF"
+url = "https://drive.google.com/file/d/16HxiGgNt0EyZ1vWqgrVxngNIf6b4Mb3f/view?usp=sharing"
 
 [menu]
 
