@@ -1,6 +1,6 @@
 +++
 author = "mike"
-title = "Title of First Post"
+title = "Welcome to my site"
 date = "2025-01-13"
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 tags = [ "markdown", "css", "html", ]
@@ -9,9 +9,6 @@ series = ["Themes Guide"]
 aliases = ["migrate-from-jekyl"]
 +++
 
-# Here's my first post
+# Welcome to my site!
 
-How does this show up in the site?
-
-Done.
----
+This is my first post on my portfolio / personal site, version 2.0. The tags on the post are samples, they will be updated when I edit this post.

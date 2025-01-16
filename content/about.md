@@ -1,8 +1,3 @@
-# Hello World
-This is a test for a markdown file in the content folder.
+# About me
 
-## Where does it show up?
-
-1. Here?
-1. How about Here?
-1. Or maybe here.
+I have ten fingers that type words with a keyboard which are then turned into 1s and 0s, at that point the computer can understand what I was trying to say and then execute my instructions.

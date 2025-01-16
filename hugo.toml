@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://mikesammartino.com/'
 languageCode = 'en-us'
 title = 'mikesammartino'
 [module]
@@ -9,10 +9,15 @@ title = 'mikesammartino'
     disable = false
 
 [params]
-title = ""
+title = "Mike Sammartino"
 author = "Mike Sammartino"
-description = "⚠️ Page Under Construction ⚠️"
+description = "full stack software developer"
 profilePicture = "img/headshot-square-small.png"
+
+[[params.socialIcons]]
+icon = "fab fa-github"
+title = "github"
+url = "https://github.com/mikesamm"
 
 [[params.socialIcons]]
 icon = "fab fa-linkedin"
@@ -39,33 +44,13 @@ url = "mailto:mike@mikesammartino.com"
   url = "/posts/"
 
   [[menu.main]]
-  name = "About"
+  name = "Portfolio"
   weight = 300
+  identifier = "portfolio"
+  url = "/portfolio"
+
+  [[menu.main]]
+  name = "About"
+  weight = 400
   identifier = "about"
   url = "/about/"
-
-[[menu.main]]
-name = "Accomplishments"
-weight = 500
-identifier = "accomplishments"
-
-[[menu.main]]
-name = "Awards"
-weight = 510
-identifier = "awards"
-url = "/awards/"
-parent = "accomplishments"
-
-[[menu.main]]
-name = "Certifications"
-weight = 520
-identifier = "certifications"
-url = "/certifications/"
-parent = "accomplishments"
-
-[[menu.main]]
-name = "Portfolio"
-weight = 530
-identifier = "portfolio"
-url = "/portfolio"
-parent = "accomplishments"

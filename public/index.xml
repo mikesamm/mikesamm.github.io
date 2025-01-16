@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 13 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Title of First Post</title>
+      <title>Welcome to my site</title>
       <link>http://localhost:1313/posts/first-post/</link>
       <pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
       
@@ -25,14 +25,8 @@
       
       <guid>http://localhost:1313/about/</guid>
       
-        <description>&lt;h1 id=&#34;hello-world&#34;&gt;Hello World&lt;/h1&gt;
-&lt;p&gt;This is a test for a markdown file in the content folder.&lt;/p&gt;
-&lt;h2 id=&#34;where-does-it-show-up&#34;&gt;Where does it show up?&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Here?&lt;/li&gt;
-&lt;li&gt;How about Here?&lt;/li&gt;
-&lt;li&gt;Or maybe here.&lt;/li&gt;
-&lt;/ol&gt;</description>
+        <description>&lt;h1 id=&#34;about-me&#34;&gt;About me&lt;/h1&gt;
+&lt;p&gt;I have ten fingers that type words with a keyboard which are then turned into 1s and 0s, at that point the computer can understand what I was trying to say and then execute my instructions.&lt;/p&gt;</description>
       
     </item>
     
