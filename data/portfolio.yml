@@ -1,11 +1,13 @@
 portfolioitems:
   # portfolio category
   - title: Coding Projects
+    description: 'All my coding projects.'
     # items within a category
     portfolioitem:
       - name: Project 1
-        image: '/images/portfolio/code.jpg'
+        image: '/img/headshot-square-small.png'
         link: https://gohugo.io/
+        linktext: 'Visit project website'
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
         tags:
           - Tag 1
