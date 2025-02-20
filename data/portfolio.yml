@@ -4,6 +4,24 @@ portfolioitems:
     # description: 'All my coding projects.'
     # items within a category
     portfolioitem:
+      - name: Apolis
+        image: '/img/apolis-thumb.png'
+        link: https://github.com/1111philo/apolis-app
+        linktext: 'view github repo'
+        description: 'Guest and service tracking and data management for homeless service and outreach organization.'
+        tags:
+          - react
+          - typescript
+          - tanstackquery
+        status: 'Published'
+        start: '01/2025'
+        end: ''
+        authors:
+          - mikesamm
+          - its-all-waves
+          - bbertucc
+          - heythisischris
+          - ShirajG
       - name: clical
         image: '/img/clical.png'
         link: https://github.com/mikesamm/clical
