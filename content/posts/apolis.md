@@ -11,18 +11,20 @@ aliases = [""]
 
 This past month I've been very busy. I dove head first into an open source, greenfield project that sounded like it would make an immediate improvement in peoples' work helping a vulnerable part of our community.
 
-The [Harry Tompson Center](https://www.harrytompsoncenter.org/) in New Orleans provides crucial day services for unhoused folks. Every year they facilitate 35,000 visits for over 4,000 unique individuals. With those numbers, their clipboard management process couldn't keep up. Apolis is the solution we made for the HTC.
+The [Harry Tompson Center](https://www.harrytompsoncenter.org/) in New Orleans provides crucial day services for unhoused folks. Every year they facilitate 35,000 visits for over 4,000 unique individuals. With those numbers, their clipboard management process couldn't keep up.
+
+Apolis is the solution we made for the HTC.
 
 Our Project Manager Blake Bertuccelli-Booth linked up with the HTC with impeccable timing: the Super Bowl was ramping up here in New Orleans and Gov. Jeff Landry just made a hall-of-fame myopic decision to waste millions of dollars on temporarily relocating unhoused folks away from the eyes of the wealthy football fans. In the same breath he complained about ineffective methods New Orleans has used in the past for reducing the unhoused population. This isn't an original idea, I heard the same thing happened in Las Vegas for a Super Bowl.
 
-Anyways, some genuinely materially beneficial work could be done with an organization like the HTC who has boots on the ground in helping the unhoused. Their work came with some pain points, and scaled to 35,000 visits a year, their clipboard style management process was fraying at the ends.
+Anyways, some genuinely materially beneficial work could be done with an organization like the HTC who has boots on the ground in helping the unhoused.
 
 Some specific pain points we aimed to address:
 - knowing who is waiting for a service and already received a service
 - accurately tracking unique guests according to name and birthday across many visits
 - communicating to guests upon sign-in that there is some sort of notification for them
 
-Additionally, from the data collected over time, we want to see which services are most correlated with getting an unhoused person housed and stable. These observations can illuminate what sort of support unhoused people need most and would be most likely to help them towards stability.
+Additionally, from the data collected over time, we will be able to see which services are most correlated with getting an unhoused person housed and stable.
 
 ## Planning
 
@@ -48,15 +50,15 @@ As services are provided daily, the users (staff/volunteers) at the HTC will be 
 The service details page is heavily interactive. Users will be constantly updating the statuses of each guest using a service. Two example workflows:
 
 - Non-resource-limited service like free shelter vouchers:
-	- a guest requests a service upon sign in, they are immediately queued to receive the service
-	- the volunteer coordinating the service will call their name when they are at the top of the queue, give them a voucher, then mark the guest as completed
+	- a guest requests a shelter voucher upon sign in, they are immediately queued to receive the service
+	- the volunteer coordinating the vouchers will call their name when they are at the top of the queue, give them a voucher, then mark the guest as completed
 - Resource-limited service like showers:
-	- a guest requests a service upon sign in, they are immediately queued to receive the service.
+	- a guest requests a shower upon sign in, they are immediately queued to use a shower
 	- the volunteer coordinating the service will call their name and assign them a shower
 	- the volunteer will monitor the time they spend in the shower, referencing a start time that marks when they were assigned the shower
 	- when the allotted time is up, the volunteer marks the guest as completed and the shower is freed up for another guest
 
-These are two ideal workflows, but in a fast paced environment there will likely be missteps and changing circumstances, so at any given time the user needs to be able to update the guest to any status regardless of where in the ideal workflow they are.
+These are two ideal workflows, but in a very active environment there will likely be missteps and changing circumstances, so at any given time the user needs to be able to update the guest to any status regardless of where in the ideal workflow they are.
 
 Technically, since all the data is coming from the API, multiple requests need to be sent and many different scenarios need to be handled depending on what status the guest needs to be changed to and from. I could see the API calls and helper functions piling up in my components, it'd be awesome to avoid all that manual refetching as guest statuses change.
 
@@ -66,6 +68,10 @@ Ian implemented TanStack Router for our SPA and it was serving us very well, pro
 
 TanStack Query provides a QueryClient that can be accessed from anywhere in the app, similar to React's Context. Wrapping the app close to the root will be the QueryProvider which takes in the QueryClient as a prop.
 ```jsx
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
+
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -74,7 +80,7 @@ export default function App() {
   );
 }
 ```
-I needed to leverage the QueryClient for services, so in the Services view component, I defined the queries that I would need to fetch the guest data separated by status. I have a `guestsSlotted`, `guestsQueued`, and `guestsCompleted` query to fetch the guests with those respective statuses. On page load, these three queries run in parallel and I get the guests I need for each table or card element.
+I needed to leverage the QueryClient for services, so in the Services view component, I defined the queries that I would need to fetch the guest data organized by status. I have a `guestsSlotted`, `guestsQueued`, and `guestsCompleted` query to fetch the guests with those respective statuses. On page load, these three queries run in parallel and I get the guests I need for each table and card element.
 ```js
 const { data: guestsSlotted, isPending: isSlotsPending } = useQuery({
   queryFn: () => fetchServiceGuestsSlotted(service.service_id),
@@ -114,21 +120,21 @@ I can use `useMutation` anywhere in my component tree and reference specific que
 
 On a resource limited service, there cannot be two guests assigned to the same slot at the same time. To avoid user error, I needed to constrain the available slot options in the select dropdown. This meant that I needed to deduce the options from the currently occupied slots AND the current user intentions.
 
-![screenshot of queued table and assign button]
+![](/img/assign-button.png)
 
 I could use the information I had from the `guestsSlotted` query and that would get me half way there. Out of 10 slots, if there were guests occupying slots 1, 2, 3, the user would only be able to choose slots 4-10. But currently that means the user would have those options for every guest and could choose the same slot for two or more guests.
 
-At this point, when a user clicks assign, the guest status is changed from queued to slotted and moves to the chosen slot, an API query is made. A user chooses a slot number in a drop down for at least one guest before the Assign button is activated.
+At this point, when a user clicks assign, the guest status is changed from queued to slotted and moves to the chosen slot, an API query is made. A user chooses a slot number in a drop down for at least one guest before the Assign button is active.
 
 I originally had an `availableSlots` query with my `guest<status>` queries, which worked for the page load but in order for that to be responsive like my guest queries, I would have to send a request or mutation every time the user chose a slot. That was obviously inefficient.
 
 However, here was the perfect case to use a state variable to track what slots were available. I could initialize it with an API call but then only update this client-side state variable as the user selects which slots they want to assign to users. Only after all their choices are made, with the state variable tracking them all, will they then click the assign button and all the guests will be mapped to their respective slot assignments.
 
-To get over the last little bug while implementing it, I started an impromptu mob debugging session with the job hunters group at Operation Spark. It was a fun experience and with some help along with explaining aloud what my problem was, I was able to pinpoint why the user's slot choice wasn't resetting if they clicked an already chosen dropdown. Shout out to Chrome Devtools as well.
+To get over the last little bug while implementing it, I started an impromptu mob debugging session with the job hunters group at Operation Spark. It was a fun experience: with some help along with explaining aloud what my problem was, I was able to pinpoint why the user's slot choice wasn't resetting if they clicked an already chosen dropdown. Shout out to Chrome Devtools as well.
 
 ### Assigning multiple guests at a time
 
-My fellow frontend dev Ian concluded that the biggest lesson he learned from this project, is that when you're running into state management and reactivity issues in React, it's probably best to factor out part of the problem component into another component. I concur. Employing this strategy helped me out more than once on this project as well.
+My fellow frontend dev Ian concluded that the biggest lesson he learned from this project is that when you're running into state management and reactivity issues in React, it's probably best to factor out part of the problem component into another component. I concur. Employing this strategy helped me out more than once on this project as well.
 
 Originally, instead of the one assign button on top of the "Queued" table, I had an assign button next to every slot select dropdown. Before handing the app off to the HTC, almost immediately we found that we couldn't assign multiple people at once, the state would get lost and not update as intended.
 
@@ -136,7 +142,7 @@ I was keeping track of the slot selection state in the QueuedTable component, bu
 
 Blake suggested having only one Assign button that would work for them all. When he said that, it felt so obvious. Reducing the many Assign buttons to one was the first step to solving this issue and the UI/UX would be much less noisy.
 
-I tried solving the state management problem without factoring out the table rows into their own components, but it ultimately did not get me any further than I was. Factoring out the components made tracking the state of each row much easier. I'm recognizing that state with the most specific scope as possible will reduce the number of re-renders, leading to a much more optimized application overall.
+I tried solving the state management problem without factoring out the table rows into their own components, but it did not get me any further than I was. Factoring out the components made tracking the state of each row much easier. I'm recognizing that state with the most specific scope as possible will reduce the number of re-renders, leading to a much more optimized application overall.
 
 So with a combination of reducing the Assign buttons to one single button, changing the state variable to an array of values that could be updated from each row component, and using a helper function to map all the state values to the respective slots, I was able to provide the user the ability to assign multiple people at once.
 
@@ -148,4 +154,4 @@ This is the first app I've been a part of launching directly to users who are im
 
 I plan on being part of the maintenance of Apolis. There may be other use cases yet with other charity and solidarity organizations which I'm excited about. Please reach out if you want to contribute, or directly check the repo out [here](https://github.com/1111philo/apolis-app).
 
-If you've made it this far, thanks for reading! I'm looking for Junior Developer role, please keep me in mind if you hear of an opportunity! 
+If you've made it this far, thanks for reading! Hire me? I'm looking for my breakout role in software development!
