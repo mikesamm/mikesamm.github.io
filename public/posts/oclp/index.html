@@ -1,0 +1,499 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <title>
+    Mike Sammartino
+        |
+        Squeezing the Apple for All Its Juice
+      
+
+    
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.147.7"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Mike Sammartino" />
+  <meta
+    name="description"
+    content="Using OpenCore Legacy Patcher"
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.d68e4d7ecce6ec385f7bfe2219b6dcfc57dfe3d2cf21d0271dbb68889da22998.css"
+      integrity="sha256-1o5Nfszm7Dhfe/4iGbbc/Fff49LPIdAnHbtoiJ2iKZg="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
+    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
+    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
+    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
+    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="http://localhost:1313/posts/oclp/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Squeezing the Apple for All Its Juice">
+  <meta name="twitter:description" content="Using OpenCore Legacy Patcher">
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/oclp/">
+  <meta property="og:site_name" content="mikesammartino">
+  <meta property="og:title" content="Squeezing the Apple for All Its Juice">
+  <meta property="og:description" content="Using OpenCore Legacy Patcher">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-07-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-10T00:00:00+00:00">
+    <meta property="article:tag" content="Opencore">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "posts",
+        "name": "Squeezing the Apple for All Its Juice",
+        "headline": "Squeezing the Apple for All Its Juice",
+        "alternativeHeadline": "",
+        "description": "
+      Using OpenCore Legacy Patcher
+
+
+    ",
+        "inLanguage": "en-us",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/oclp\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "mike"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "mike"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "mike"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "mike"
+        },
+        "copyrightYear" : "2025",
+        "dateCreated": "2025-07-10T00:00:00.00Z",
+        "datePublished": "2025-07-10T00:00:00.00Z",
+        "dateModified": "2025-07-10T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "mike",
+            "url": "http://localhost:1313/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/localhost:1313\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "http:\/\/localhost:1313\/posts\/oclp\/",
+        "wordCount" : "1041",
+        "genre" : [ 
+      
+      "os"
+
+    ],
+        "keywords" : [ 
+      
+      "opencore"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/img/headshot-square-small.png"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">Mike Sammartino</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>software developer</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/mikesamm"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Github"
+            title="Github"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://www.linkedin.com/in/mike-sammartino/"
+            target="_blank"
+            rel="noopener me"
+            aria-label="LinkedIn"
+            title="LinkedIn"
+          >
+            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:mike@mikesammartino.com"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Email"
+            title="Email"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://drive.google.com/file/d/1p4eZiDbAdiNjhaQtv2Wb10OKntuykzRq/view?usp=sharing"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Resume PDF"
+            title="Resume PDF"
+          >
+            <i class="far fa-file-pdf fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Mike Sammartino
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/posts/"
+              
+              title=""
+              >Posts</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/portfolio"
+              
+              title=""
+              >Portfolio</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>Squeezing the Apple for All Its Juice</h1>
+      
+      <p>It&rsquo;s 2025, and I run a Mid 2012 MacBook as my daily driver with macOS Ventura installed on it.</p>
+<p><img src="/img/system-info.png" alt=""></p>
+<p>Why? With recent Apple products priced out of my range, I can&rsquo;t justify a new or even official Apple Refurbished laptop right now as I look for an engineering role, and especially not when I can use my engineering brain to find a solution.</p>
+<p>At this point in my life, my brain is Mac-mapped. Besides my 2012 MacBook Pro, I also have a 2013 iMac (running macOS Sonoma). A few years ago I was looking to update my iMac so that the security updates would be current and I would be able to run the most recent versions of applications. Apple said, &ldquo;Nah, buy a new computer, cheapskate.&rdquo; &ldquo;Um, excuse me? OK then, challenge accepted.&rdquo; I thought, what can I do with what I got? There&rsquo;s no way I&rsquo;m just going to go along with Apple&rsquo;s planned obsolescence.</p>
+<p>In comes OpenCore, the boot loader, and its GUI companion, OpenCore Legacy Patcher, to modify macOS on the fly to work with older hardware.</p>
+<h2 id="high-level-overview">High Level Overview</h2>
+<p>According to the <a href="https://github.com/dortania/OpenCore-Legacy-Patcher/?tab=readme-ov-file">README</a>, OpenCore Legacy Patcher (OCLP) is:</p>
+<blockquote>
+<p>A Python-based project revolving around <a href="https://github.com/acidanthera/OpenCorePkg">Acidanthera&rsquo;s OpenCorePkg</a> and <a href="https://github.com/acidanthera/Lilu">Lilu</a> for both running and unlocking features in macOS on supported and unsupported Macs.</p>
+<p>Our project&rsquo;s main goal is to breathe new life into Macs no longer supported by Apple, allowing for the installation and usage of macOS Big Sur and newer on machines as old as 2007.</p></blockquote>
+<p>OpenCorePkg (OpenCore) is the boot loader behind the GUI interface of OCLP. It was the successor to <a href="https://cloverhackycolor.github.io/Clover-Documentation/">Clover</a>, which had been a favorite of Hackintosh users for running macOS on unsupported hardware. The key feature of OpenCore is <a href="https://deepwiki.com/acidanthera/OpenCorePkg/4.1-kext-prelinking-and-injection">kext injection</a>.</p>
+<p>Kexts are &ldquo;kernel extensions&rdquo;, snippets of code that modify the macOS kernel to enable compatibility with system components. When OpenCore boots the macOS kernel, it modifies the OS on the fly during each boot so that you don&rsquo;t have to worry about directly modifying the OS.</p>
+<p>Modifying macOS directly was the first way to run macOS on unsupported hardware. Scripts were created and shared to do this, but maintaining your machine became tricky when system updates were executed. With each update you would have to re-run the scripts, and that assumes the update didn&rsquo;t accidentally render your machine unbootable.</p>
+<p>Greg Gant, in his write up for OCLP, includes a <a href="https://blog.greggant.com/posts/2023/03/28/opencore-and-opencore-legacy-patcher-explained.html">great summary</a> of how macOS became more closed at the system level over time to reduce possible malware vectors at the OS level. This closing at the system level removed permissions for the root user to edit the OS, thus scripts like <a href="https://dosdude1.com/software.html">DOSDude1&rsquo;s</a> wouldn&rsquo;t work anymore.</p>
+<p>So kext injection became the way to go, but managing the configuration of OpenCore was still a little advanced, which limited its use to power users. Much like the OS modifying scripts, config files were shared for certain sets of hardware, you could edit them to your specific set of hardware as needed.</p>
+<p><img src="/img/oclp-home.png" alt=""></p>
+<p>OCLP was born out of the goal to increase access and use of OpenCore for users that aren&rsquo;t super knowledgeable about OS patching (me). OCLP provides a GUI interface along with maintained collections of patches for hardware. To use OpenCore, now a user only needs to know the model of their mac and the target OS they want to install.</p>
+<h2 id="my-experience-with-oclp">My Experience with OCLP</h2>
+<p>OCLP has been my lifeline in the last year. I actually bought my 2012 MacBook Pro in 2024 (shout out to <a href="https://unicomri.net/">Unicom</a> in Cranston, RI) when I was going through the <a href="https://www.operationspark.org/">Operation Spark</a> bootcamp. Running this machine as my daily driver has broadened my perspective on how long hardware can be useful as well as what my actual needs and limitations are as a developer.</p>
+<p>My machine meets my needs pretty much completely. A few limitations I&rsquo;ve run into: running multiple Docker containers at a time and running Zoom and Chrome at the same time. It boils down to memory usage and graphics processing. With Sequoia on my iMac, the dynamic wallpapers don&rsquo;t work, which is purely cosmetic.</p>
+<p><img src="/img/docker-activity-monitor.png" alt=""></p>
+<p>These limitations are inconveniences I can live with. I can still run more than one Docker container concurrently, but I have to limit what else is running on my computer at the same time and monitor the ventilation / how hot it&rsquo;s getting. Zoom, as expected, uses a big portion of memory and CPU, I use it as least as possible. Chrome was also using a lot of memory, then someone mentioned Brave uses less, so I switched to Brave and that has worked better for me, with the bonus of a default adblocker.</p>
+<p>Currently, I&rsquo;m staying with Ventura on my laptop because there are <a href="https://github.com/dortania/OpenCore-Legacy-Patcher/issues/1008">graphics driver bugs</a> that might be critical on my MacBook Pro. I&rsquo;ll experiment later, but right now I&rsquo;m staying with what definitely works.</p>
+<h2 id="reflections">Reflections</h2>
+<p>I&rsquo;m proud that I can develop all I need on a machine that nobody expects to be running. I&rsquo;m also keeping completely viable hardware out of the landfill as long as possible. Reduce and Reuse, two of the Three R&rsquo;s in action!</p>
+<p>I went this route for practicality and frugality. For me, a welcomed challenge. I kinda like friction in my life because it usually means I&rsquo;ll learn something and be better prepared for other challenges. If I can fix something myself, that&rsquo;s the road I&rsquo;m going to take. It&rsquo;s all additive knowledge and it makes life more interesting.</p>
+<p>I 100% recommend OCLP to anyone who wants to run their older Macs. Maybe you just want an onboard CD drive again, maybe you want to save viable components from the landfill, or maybe it&rsquo;s your best option for a working Mac without shelling out at least a grand. I&rsquo;ve installed OS Ventura on my 2012 MacBook Pro and my friend&rsquo;s 2011 27&quot; iMac (to run the latest Adobe Creative apps), and OS Sequoia on my 2013 iMac. No major hiccups yet!</p>
+<p>Which brings me to my call to action:</p>
+<h2 id="throw-apple"><em>Throw Apple&rsquo;s short support window out the window and squeeze your Apple for all its juice!</em></h2>
+<h3 id="recommended-resources">Recommended resources:</h3>
+<ul>
+<li><a href="https://dortania.github.io/OpenCore-Legacy-Patcher/">Official docs</a> and <a href="https://dortania.github.io/OpenCore-Legacy-Patcher/INSTALLER.html">step by step</a> instructions.</li>
+<li>Video: <a href="https://www.youtube.com/watch?v=wtZMtbtTCE0">Install macOS Sonoma on Unsupported Macs using OpenCore (Step-by-Step Tutorial)</a></li>
+<li>Video: <a href="https://www.youtube.com/watch?v=VSF9eCLDpoI">OpenCore &amp; OCLP Explained (OpenCore Legacy Patcher)</a></li>
+</ul>
+
+
+
+<h3>Posts in this series</h3>
+<ul>
+  
+    <li><a href="/posts/oclp/">Squeezing the Apple for All Its Juice</a></li>
+  
+</ul>
+</div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/os/">os</a></span>
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/opencore/">opencore</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Mike Sammartino
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

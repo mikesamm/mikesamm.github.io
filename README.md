@@ -1,3 +1,3 @@
 ## [mikesammartino.com](https://mikesammartino.com/)
 
-My personal landing page
+My personal site and blog.
