@@ -24,16 +24,6 @@ icon = "fab fa-linkedin"
 title = "LinkedIn"
 url = "https://www.linkedin.com/in/mike-sammartino/"
 
-[[params.socialIcons]]
-icon = "fas fa-envelope"
-title = "Email"
-url = "mailto:mike@mikesammartino.com"
-
-[[params.socialIcons]]
-icon = "far fa-file-pdf"
-title = "Resume PDF"
-url = "https://drive.google.com/file/d/1p4eZiDbAdiNjhaQtv2Wb10OKntuykzRq/view?usp=sharing"
-
 [menu]
 
   [[menu.main]]
